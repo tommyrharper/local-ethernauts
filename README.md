@@ -24,3 +24,20 @@ This challenge is based on https://ethernaut.openzeppelin.com/
 # Helpful Tip
 
 - You can console.log in solidity using hardhat! Read here for more details: https://hardhat.org/tutorial/debugging-with-hardhat-network.html
+
+```solidity
+import "hardhat/console.sol";
+```
+
+## Notes
+
+There are 3 ways a contract can be forced to receive eth:
+1. via `selfdestruct(payable(address))`
+2. via a `coinbase transaction` i.e. miner block reward => question, is this still relevant with PoS?
+3. Via sending eth to a contract before it is deployed.
+
+## Questions?
+
+- `coinbase transaction` i.e. miner block reward => question, is this still relevant with PoS?
+  - see above
+- Is it possible to hack `King.sol` in such a way that you always receive future payments from other players, not just so you lock the kingship?
