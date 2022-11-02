@@ -9,7 +9,7 @@ const helper = async (victim: any) => {
     Vault directly
   */
   const password = "0x" + victim.deployTransaction.data.slice(-64);
-  victim.unlock(password);
+  await victim.unlock(password);
 };
 
 export default helper;

@@ -15,7 +15,7 @@ describe("Attacking Denial", function () {
     });
     const Attacker = await ethers.getContractFactory("AttackingDenial");
     attacker = await Attacker.connect(hacker).deploy(victim.address);
-    victim.setWithdrawPartner(attacker.address);
+    await victim.setWithdrawPartner(attacker.address);
   });
 
   // Get this to pass!
